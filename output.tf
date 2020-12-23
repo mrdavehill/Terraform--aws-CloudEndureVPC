@@ -1,9 +1,11 @@
+
 # VPC
 output "vpc_id" {
-  description = "The ID of the VPC"
+  description = "ID of project VPC"
   value       = module.vpc.vpc_id
 }
 
+/*
 # CIDR blocks
 output "cidr_block" {
   description = "The CIDR block of the VPC"
@@ -32,3 +34,4 @@ output "az" {
   description = "A list of availability zones spefified as argument to this module"
   value       = module.vpc.az
 }
+*/

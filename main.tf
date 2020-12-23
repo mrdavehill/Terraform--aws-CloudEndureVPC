@@ -12,20 +12,13 @@ provider "aws" {
   region = var.region
 }
 
-## Virtual Private Cloud
+## Infrastructure module
 #########################################################################################
-
-resource "aws_vpc" "vpc" {
-  cidr_block           = var.cidr_block
-  enable_dns_support   = true
-  enable_dns_hostnames = true
-}
-
 module "vpc" {
-source = "../modules/CloudEndureVPC"
+  source = "git::https://github.com/mrdavehill/Terraform--modules-CloudEndureVPC.git"
 
-  region                = var.region
   cidr_block            = var.cidr_block
+  region                = var.region
   private_cidr          = var.private_cidr
   public_cidr           = var.public_cidr
   az                    = var.az
